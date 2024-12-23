@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arabalar ve Teknolojileri</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #000000; /* Siyah arka plan */
+            color: #ecf0f1;
+            margin: 0;
+            padding: 0;
+            overflow-y: scroll; /* Sayfanın biraz kayabilmesi için scroll özelliği */
+        }
+
+        header {
+            background-color: #e74c3c; /* Kırmızımsı renk */
+            padding: 15px;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 36px;
+            color: #ecf0f1;
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            background-color: #c0392b; /* Kırmızımsı renk */
+            padding: 10px;
+        }
+
+        nav a {
+            color: #ecf0f1;
+            text-decoration: none;
+            padding: 12px;
+            margin: 0 15px;
+            font-size: 18px;
+            border-radius: 5px;
+            display: inline-flex;
+            align-items: center;
+        }
+
+        nav a:hover {
+            background-color: #e74c3c;
+        }
+
+        nav a::after {
+            content: " →";
+            margin-left: 8px;
+            font-size: 20px;
+        }
+
+        .section {
+            display: none;
+            padding: 30px;
+            margin: 20px;
+            background-color: #34495e;
+            border-radius: 8px;
+            min-height: 200px; /* Bölümlerin yüksekliklerini sabitlemek */
+        }
+
+        h2 {
+            font-size: 28px;
+            margin-bottom: 15px;
+            color: #ecf0f1;
+        }
+
+        p {
+            font-size: 18px;
+            line-height: 1.6;
+        }
+
+        .history-section {
+            margin-top: 30px;
+        }
+
+        .model-info {
+            background-color: #34495e; /* Diğer bölümlerle uyumlu renk */
+            padding: 15px;
+            margin-top: 10px;
+            border-radius: 8px;
+        }
+
+        .model-info h3 {
+            color: #ecf0f1;
+        }
+
+        footer {
+            text-align: center;
+            padding: 10px;
+            background-color: #2c3e50;
+            color: #ecf0f1;
+            position: absolute;
+            width: 100%;
+            bottom: -40px; /* Footer'ı biraz aşağıya kaydırarak ekranın dışında bırakıyoruz */
+            visibility: hidden; /* Her hakkı saklıdır yazısını görünmez yapıyoruz */
+        }
+
+        .content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .active {
+            display: block;
+        }
+
+        .transition {
+            opacity: 0;
+            transition: opacity 0.5s ease;
+        }
+
+        .active.transition {
+            opacity: 1;
+        }
+
+        .pop-up {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 24px;
+            z-index: 1000;
+        }
+
+        .pop-up-message {
+            background-color: #e74c3c;
+            padding: 30px;
+            border-radius: 10px;
+            text-align: center;
+            font-size: 28px;
+        }
+
+        .pop-up-button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #16a085;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 18px;
+        }
+
+        .pop-up-button:hover {
+            background-color: #1abc9c;
+        }
+
+        .welcome-message {
+            font-size: 24px;
+            color: #ecf0f1;
+            text-align: center;
+            margin-top: 20px;
+        }
+
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Arabalar ve Teknolojileri</h1>
+</header>
+
+<nav>
+    <a href="#" onclick="showSection('car-brands')">Araba Markaları</a>
+    <a href="#" onclick="showSection('models')">Araba Modelleri</a>
+    <a href="#" onclick="showSection('history')">Araba Tarihi</a>
+    <a href="#" onclick="showSection('technologies')">Araba Teknolojileri</a>
+    <a href="#" onclick="showSection('environment')">Çevre ve Arabalar</a>
+</nav>
+
+<div class="content">
+    <!-- Araba Markaları -->
+    <section id="car-brands" class="section transition">
+        <h2>Araba Markaları ve Tarihçesi</h2>
+        <div class="history-section">
+            <h3>Mercedes-Benz</h3>
+            <p>Mercedes-Benz, 1886 yılında Carl Benz tarafından ilk benzinli otomobilin üretimiyle başlamıştır. Bugün, lüks ve yüksek performanslı araçlar üretmektedir. Mercedes-Benz, güvenlik teknolojileri, şıklık ve yenilikçi tasarımlarıyla tanınmaktadır.</p>
+            <a href="https://www.mercedes-benz.com" target="_blank">Mercedes-Benz Link</a>
+        </div>
+        <div class="history-section">
+            <h3>Volvo</h3>
+            <p>Volvo, 1927 yılında İsveç'te kurulmuş bir otomobil markasıdır. Güvenlik alanında çığır açan yenilikleriyle tanınır ve çevre dostu araçlar üretme konusunda büyük bir adım atmıştır. Volvo'nun araçları, sürücüye ve yolcularına maksimum güvenlik sunar.</p>
+            <a href="https://www.volvocars.com" target="_blank">Volvo Link</a>
+        </div>
+        <div class="history-section">
+            <h3>Hyundai</h3>
+            <p>Hyundai, 1967'de Güney Kore'de kurulmuş ve hızla globalleşmiş bir otomobil üreticisidir. Son yıllarda çevre dostu elektrikli araçlarla dikkat çeken Hyundai, dünyanın en büyük otomobil üreticilerinden biri haline gelmiştir.</p>
+            <a href="https://www.hyundai.com" target="_blank">Hyundai Link</a>
+        </div>
+    </section>
+
+    <!-- Araba Modelleri -->
+    <section id="models" class="section transition">
+        <h2>Popüler Araba Modelleri</h2>
+        <div class="model-info">
+            <h3>Mercedes-Benz S-Class</h3>
+            <p>Mercedes-Benz'in amiral gemisi S-Class, lüks, konfor ve yüksek teknoloji ile donatılmıştır. S-Class, otonom sürüş özellikleri, yüksek güvenlik donanımları ve zarif tasarımı ile öne çıkar. Bu araç, dünyanın en prestijli ve tercih edilen araçlarından biridir.</p>
+        </div>
+        <div class="model-info">
+            <h3>Volvo XC90</h3>
+            <p>Volvo'nun XC90 modeli, bir SUV'den beklenen tüm lüks özellikleri ve daha fazlasını sunmaktadır. Çevre dostu ve güvenlik teknolojileri ile dikkat çekerken, geniş iç hacmiyle de aileler için ideal bir seçenektir. Sürücüye yardımcı olan birçok gelişmiş sürüş asistanı sistemine sahiptir.</p>
+        </div>
+        <div class="model-info">
+            <h3>Hyundai Ioniq 5</h3>
+            <p>Hyundai'nin elektrikli araç modeli olan Ioniq 5, futuristik tasarımı, yüksek menzil kapasitesi ve hızlı şarj özellikleri ile dikkat çekmektedir. Hem şehiriçi sürüş hem de uzun yolculuklar için mükemmel bir seçimdir. Elektrikli araç teknolojisinde önemli bir adım atmıştır.</p>
+        </div>
+    </section>
+
+    <!-- Araba Tarihi -->
+    <section id="history" class="section transition">
+        <h2>Araba Tarihi</h2>
+        <p>Otomobilin tarihi, 1885'te Karl Benz'in benzinli aracı icat etmesiyle başlar. Ford'un 1908'de Model T'yi üretmesi, otomobilin kitlesel üretimini başlatmış ve otomobilin halk arasında yayılmasına olanak tanımıştır. Zamanla araçlar daha hızlı, daha güvenli ve çevre dostu hale gelmiştir.</p>
+    </section>
+
+    <!-- Araba Teknolojileri -->
+    <section id="technologies" class="section transition">
+        <h2>Araba Teknolojileri</h2>
+        <p>Günümüzde, arabalar daha akıllı ve bağlantılı hale geliyor. Otonom sürüş teknolojisi, elektrikli araçlar, sürücü destek sistemleri ve hibrit teknolojiler, araba dünyasını dönüştüren başlıca yeniliklerdir.</p>
+    </section>
+
+    <!-- Çevre ve Arabalar -->
+    <section id="environment" class="section transition">
+        <h2>Çevre ve Arabalar</h2>
+        <p>Arabalar, çevre üzerinde büyük bir etkiye sahiptir. Fosil yakıtlı araçların emisyonları, hava kirliliği ve iklim değişikliği üzerinde olumsuz etkiler yaratmaktadır. Elektrikli araçlar ve hibrit araçlar ise çevreye daha az zarar verirken, geleceğin ulaşım çözümleri olarak öne çıkmaktadır.</p>
+    </section>
+
+    <div id="welcome-message" class="welcome-message">
+        <p>Hoş geldiniz! Arabalarla ilgili daha fazla şey keşfetmek için lütfen geçiş yapın.</p>
+    </div>
+</div>
+
+<!-- Pop-up -->
+<div id="pop-up" class="pop-up" style="display: none;">
+    <div class="pop-up-message">
+        <p>Hoş geldiniz! Arabalarla ilgili daha fazla şey keşfetmek için lütfen geçiş yapın.</p>
+        <button class="pop-up-button" onclick="closePopUp()">Tamam</button>
+    </div>
+</div>
+
+<footer>
+</footer>
+
+<script>
+    let currentSection = null;
+
+    function showSection(sectionId) {
+        let sections = document.querySelectorAll('.section');
+        sections.forEach(function (section) {
+            section.classList.remove('active');
+        });
+
+        const sectionToShow = document.getElementById(sectionId);
+        sectionToShow.classList.add('active');
+        sectionToShow.classList.add('transition');
+        sectionToShow.classList.remove('transition');
+
+        const welcomeMessage = document.getElementById('welcome-message');
+        welcomeMessage.style.display = 'none';
+    }
+
+    function closePopUp() {
+        document.getElementById('pop-up').style.display = 'none';
+    }
+
+    window.onload = function () {
+        document.getElementById('pop-up').style.display = 'flex';
+    };
+</script>
+
+</body>
+</html>
